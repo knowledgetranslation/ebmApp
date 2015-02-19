@@ -1,0 +1,103 @@
+
+<ion-view view-title="Prospective Study">
+  <ion-nav-view>
+    <ion-tabs class="tabs-positive tabs-icon-only tabs-icon-top" style="padding-top:25px">
+      <ion-tab title="Calculate" icon-on="ion-ios7-calculator" icon-off="ion-ios7-calculator-outline">
+        <ion-header-bar class="bar-positive">
+          <button class="button button-clear" ng-click="newTask()">New</button>
+          <h1 class="title">Tasks</h1>
+        </ion-header-bar>
+        <ion-content has-tabs="true">
+          <form ng-submit="calculateValues()" class="padding has-header">
+            <div class="list card">
+              <div class="item item-divider">
+                Prospective Study
+              </div>
+              <div class="item item-body">
+                <p style="margin-top: 0">Enter your values below.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="item item-divider">
+                Disease
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label">Treated</span>
+                    <input type="text" placeholder="A" ng-model="calculator.a">
+                  </label>
+                </div>
+                <div class="col">
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label">Not Treated</span>
+                    <input type="text" placeholder="C" ng-model="calculator.c">
+                  </label>
+                </div>
+              </div>
+              <div class="item item-divider">
+                No Disease
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label">Treated</span>
+                    <input type="text" placeholder="B" ng-model="calculator.b">
+                  </label>
+                </div>
+                <div class="col">
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label">Not Treated</span>
+                    <input type="text" placeholder="D" ng-model="calculator.d">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <input type="submit" class="submit button button-block button-positive" value="Calculate"/>
+            <input type="button" ng-click="reset(form)" class="reset button button-block button-assertive" value="Reset"/>
+          </form>
+        </ion-content>
+      </ion-tab>
+
+      <ion-tab title="Results" icon-on="ion-ios7-information" icon-off="ion-ios7-information-outline">
+        <ion-header-bar class="bar-positive">
+          <button class="button button-clear" ng-click="newTask()">New</button>
+          <h1 class="title">Results</h1>
+        </ion-header-bar>
+        <ion-content has-tabs="true">
+          <div class="card">
+            <div class="item item-divider">
+              Results
+            </div>
+            <div class="row">
+              <div class="col"><strong>Chi-squared</strong></div>
+              <div class="col">{{results.chiSquared}}</div>
+              <div class="col">p-value: {{results.pValue}}</div>
+            </div>
+            <div class="row">
+              <div class="col"></div>
+              <div class="col"><strong>Estimate</strong></div>
+              <div class="col"><strong>95% CI</strong></div>
+            </div>
+            <div class="row">
+              <div class="col"><strong>RR</strong></div>
+              <div class="col">{{results.rr}}</div>
+              <div class="col">[{{results.rrLowerLimit}} to {{results.rrUpperLimit}}]</div>
+            </div>
+            <div class="row">
+              <div class="col"><strong>ARR</strong></div>
+              <div class="col">{{results.arr}}</div>
+              <div class="col">[{{results.arrLowerLimit}} to {{results.arrUpperLimit}}]</div>
+            </div>
+            <div class="row">
+              <div class="col"><strong>NNT</strong></div>
+              <div class="col">{{results.nnt}}</div>
+              <div class="col">[{{results.nntLowerLimit}} to {{results.nntUpperLimit}}]</div>
+            </div>
+          </div>
+        </ion-content>
+      </ion-tab>
+
+    </ion-tabs>
+  </ion-nav-view>
+</ion-view>
