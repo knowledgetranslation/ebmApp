@@ -7033,3 +7033,6 @@ a.button {
 
 .test svg {
   width: 100%; }
+
+.results div.col {
+  font-size: 90%; }
