@@ -2,6 +2,7 @@
   "name": "ebm2",
   "app_id": "b556d4c1",
   "gulpStartupTasks": [
+    "sass",
     "watch"
   ],
   "watchPatterns": [

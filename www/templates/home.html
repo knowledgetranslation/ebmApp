@@ -1,12 +1,57 @@
 
-<ion-view view-title="Home">
-  <ion-content class="padding">
-    <img src="img/ktlogo.png" style="width: 100%"/>
-    <button class="button button-block button-positive" ng-click="openStats()">
-      Stats Calculator
-    </button>
-    <button class="button button-block button-positive" ng-click="openNnt()">
-      OR to NNT Converter
-    </button>
+<ion-view view-title="Home" class="home">
+  <ion-content>
+    <div class="row responsive-md">
+      <div class="col">
+        <img src="img/ktlogo.png" style="width: 100%"/>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="item item-divider">
+            Stats Calculators
+          </div>
+          <div class="item item-text-wrap">
+            <div class="row">
+              <div class="col">
+                <button class="button button-block button-positive" ng-click="openDiagnosticTest()">
+                  Diagnostic Test
+                </button>
+              </div>
+              <div class="col">
+                <button class="button button-block button-positive" ng-click="openProspectiveStudy()">
+                  Prospective Study<br/>
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button class="button button-block button-positive" ng-click="openCaseControlStudy()">
+                  Case-Control Study
+                </button>
+              </div>
+              <div class="col">
+                <button class="button button-block button-positive" ng-click="openRandomizedControlTrialStudy()">
+                  Randomized Control Trial
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="item item-divider">
+            Other Tools
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="item item-text-wrap">
+                <button class="button button-block button-positive" ng-click="openNnt()">
+                  OR to NNT Converter
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

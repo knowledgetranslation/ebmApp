@@ -21,3 +21,27 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.home .button {
+  line-height: normal;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  min-height: 80px;
+}
+
+.home .button.button-block {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.test .card {
+  margin: 5px 0px;
+}
+
+.test .buttons {
+  padding-top: 10px;
+}
+
+.test svg {
+  width: 100%;
+}
+

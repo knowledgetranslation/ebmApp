@@ -39,17 +39,6 @@ module.exports = angular.module('starter.controllers', ['starter.services'])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
 .controller("DiagnosticTestCtrl", function($scope, $state, MyService, $ionicTabsDelegate, $window) {
   $scope.reset = function() {
     $scope.calculator.a = '';
@@ -200,14 +189,21 @@ module.exports = angular.module('starter.controllers', ['starter.services'])
 })
 
 .controller("HomeCtrl", function($scope, $state) {
-  $scope.openStats = function() {
-    $state.go("app.statsCalculator");
+  $scope.openDiagnosticTest = function() {
+    $state.go("app.diagnostic");
   };
-
+  $scope.openProspectiveStudy = function() {
+    $state.go("app.prospective");
+  };
+  $scope.openCaseControlStudy = function() {
+    $state.go("app.caseControl");
+  };
+  $scope.openRandomizedControlTrialStudy = function() {
+    $state.go("app.randomized");
+  };
   $scope.openNnt = function() {
     $state.go("app.nntConverter");
   };
-
 })
 
 .controller("NNTConverterCtrl", function($scope, $state, MyService, $ionicTabsDelegate, $window) {
@@ -241,10 +237,6 @@ module.exports = angular.module('starter.controllers', ['starter.services'])
 
     $scope.calculator.nnt = nnt;
   };
-})
-
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 });
 
-require('chartService');
+require('services');

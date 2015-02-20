@@ -22,5 +22,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 });
 
-require('state');
+require('states');
 require('controllers');

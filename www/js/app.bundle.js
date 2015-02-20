@@ -23,10 +23,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 });
 
-require('state');
+require('states');
 require('controllers');
 
-},{"angular":15,"controllers":7,"ionic-angular":16,"state":9}],2:[function(require,module,exports){
+},{"angular":15,"controllers":7,"ionic-angular":16,"states":9}],2:[function(require,module,exports){
 var chiSquared = require('chi-squared');
 var decimalAdjust = require('decimal-adjust');
 
@@ -900,17 +900,6 @@ module.exports = angular.module('starter.controllers', ['starter.services'])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
 .controller("DiagnosticTestCtrl", function($scope, $state, MyService, $ionicTabsDelegate, $window) {
   $scope.reset = function() {
     $scope.calculator.a = '';
@@ -1061,14 +1050,21 @@ module.exports = angular.module('starter.controllers', ['starter.services'])
 })
 
 .controller("HomeCtrl", function($scope, $state) {
-  $scope.openStats = function() {
-    $state.go("app.statsCalculator");
+  $scope.openDiagnosticTest = function() {
+    $state.go("app.diagnostic");
   };
-
+  $scope.openProspectiveStudy = function() {
+    $state.go("app.prospective");
+  };
+  $scope.openCaseControlStudy = function() {
+    $state.go("app.caseControl");
+  };
+  $scope.openRandomizedControlTrialStudy = function() {
+    $state.go("app.randomized");
+  };
   $scope.openNnt = function() {
     $state.go("app.nntConverter");
   };
-
 })
 
 .controller("NNTConverterCtrl", function($scope, $state, MyService, $ionicTabsDelegate, $window) {
@@ -1102,15 +1098,11 @@ module.exports = angular.module('starter.controllers', ['starter.services'])
 
     $scope.calculator.nnt = nnt;
   };
-})
-
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 });
 
-require('chartService');
+require('services');
 
-},{"angular":15,"chartService":8,"ebmstats":2,"ionic-angular":16,"svgTemplate":18,"utilities":10}],8:[function(require,module,exports){
+},{"angular":15,"ebmstats":2,"ionic-angular":16,"services":8,"svgTemplate":18,"utilities":10}],8:[function(require,module,exports){
 var angular = require("angular");
 var ionicModule = require('ionic-angular');
 var ebmstats = require('ebmstats');
@@ -1247,7 +1239,7 @@ module.exports = utilities;
 },{"angular":15,"ebmstats":2,"ionic-angular":16}],11:[function(require,module,exports){
 (function (global){
 
-; require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js");
+; require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js");
 ;__browserify_shim_require__=require;(function browserifyShim(module, define, require) {
 /**
  * State-based routing for AngularJS
@@ -5484,10 +5476,10 @@ angular.module('ui.router.state')
 }).call(global, module, undefined, undefined);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js":15}],12:[function(require,module,exports){
+},{"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js":15}],12:[function(require,module,exports){
 (function (global){
 
-; require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js");
+; require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js");
 ;__browserify_shim_require__=require;(function browserifyShim(module, define, require) {
 /**
  * @license AngularJS v1.3.6
@@ -7630,10 +7622,10 @@ angular.module('ngAnimate', ['ng'])
 }).call(global, module, undefined, undefined);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js":15}],13:[function(require,module,exports){
+},{"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js":15}],13:[function(require,module,exports){
 (function (global){
 
-; require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js");
+; require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js");
 ;__browserify_shim_require__=require;(function browserifyShim(module, define, require) {
 /**
  * @license AngularJS v1.3.6
@@ -8306,10 +8298,10 @@ angular.module('ngResource', ['ng']).
 }).call(global, module, undefined, undefined);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js":15}],14:[function(require,module,exports){
+},{"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js":15}],14:[function(require,module,exports){
 (function (global){
 
-; require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js");
+; require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js");
 ;__browserify_shim_require__=require;(function browserifyShim(module, define, require) {
 /**
  * @license AngularJS v1.3.6
@@ -8995,7 +8987,7 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
 }).call(global, module, undefined, undefined);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js":15}],15:[function(require,module,exports){
+},{"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js":15}],15:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /**
@@ -35006,12 +34998,12 @@ var styleDirective = valueFn({
 },{}],16:[function(require,module,exports){
 (function (global){
 
-; require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js");
-require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular-animate.js");
-require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular-resource.js");
-require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular-sanitize.js");
-require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular-ui/angular-ui-router.js");
-require("/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/ionic.js");
+; require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js");
+require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular-animate.js");
+require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular-resource.js");
+require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular-sanitize.js");
+require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular-ui/angular-ui-router.js");
+require("/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/ionic.js");
 ;__browserify_shim_require__=require;(function browserifyShim(module, define, require) {
 /*!
  * Copyright 2014 Drifty Co.
@@ -46499,7 +46491,7 @@ IonicModule
 }).call(global, module, undefined, undefined);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular-ui/angular-ui-router.js":11,"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular-animate.js":12,"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular-resource.js":13,"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular-sanitize.js":14,"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/angular/angular.js":15,"/Users/nikolas/Google Drive/_server/smh/ebm2/www/lib/ionic/js/ionic.js":17}],17:[function(require,module,exports){
+},{"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular-ui/angular-ui-router.js":11,"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular-animate.js":12,"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular-resource.js":13,"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular-sanitize.js":14,"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/angular/angular.js":15,"/Users/nikolas/Google Drive/_server/smh/ebm/www/lib/ionic/js/ionic.js":17}],17:[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!

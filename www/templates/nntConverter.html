@@ -1,38 +1,46 @@
 
-<ion-view view-title="OR to NNT Converter">
+<ion-view view-title="OR to NNT Converter" class="test">
   <ion-nav-view>
     <ion-content>
       <form ng-submit="calculateValues()" class="padding has-header">
-        <div class="list card">
-          <div class="item item-divider">
-            OR to NNT Converter
+        <div class="row responsive-sm">
+          <div class="col">
+            <div class="card">
+              <div class="item item-divider">
+                OR to NNT Converter
+              </div>
+              <div class="item item-body">
+                <p style="margin-top: 0">To convert odds ratios to NNTs, enter a number that is > 1 or < 1 in the odds ratio textbox and a number that is not equal to 0 or 1 for the Patient's Expected Event Rate (PEER). After entering the numbers, click "Calculate" to convert the odds ratio to NNT.</p>
+              </div>
+            </div>
           </div>
-          <div class="item item-body">
-            <p style="margin-top: 0">To convert odds ratios to NNTs, enter a number that is > 1 or < 1 in the odds ratio textbox and a number that is not equal to 0 or 1 for the Patient's Expected Event Rate (PEER). After entering the numbers, click "Calculate" to convert the odds ratio to NNT.</p>
+          <div class="col">
+            <div class="card">
+              <div class="item item-divider">
+                Odds Radio
+              </div>
+              <label class="item item-input item-stacked-label">
+                <input type="text" placeholder="Odds Ratio" ng-model="calculator.a">
+              </label>
+              <div class="item item-divider">
+                Patient's Expected Event Rate (PEER)
+              </div>
+              <label class="item item-input item-stacked-label">
+                <input type="text" placeholder="PEER" ng-model="calculator.b">
+              </label>
+              <div class="item item-divider">
+                NNT
+              </div>
+              <label class="item item-input item-stacked-label">
+                <input type="text" readonly placeholder="NNT" ng-model="calculator.nnt">
+              </label>
+            </div>
+            <div class="buttons">
+              <input type="submit" class="submit button button-block button-positive" value="Calculate"/>
+              <input type="button" ng-click="reset(form)" class="reset button button-block button-assertive" value="Reset"/>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <div class="item item-divider">
-            Odds Radio
-          </div>
-          <label class="item item-input item-stacked-label">
-            <input type="text" placeholder="Odds Ratio" ng-model="calculator.a">
-          </label>
-          <div class="item item-divider">
-            Patient's Expected Event Rate (PEER)
-          </div>
-          <label class="item item-input item-stacked-label">
-            <input type="text" placeholder="PEER" ng-model="calculator.b">
-          </label>
-          <div class="item item-divider">
-            NNT
-          </div>
-          <label class="item item-input item-stacked-label">
-            <input type="text" readonly placeholder="NNT" ng-model="calculator.nnt">
-          </label>
-        </div>
-        <input type="submit" class="submit button button-block button-positive" value="Calculate"/>
-        <input type="button" ng-click="reset(form)" class="reset button button-block button-assertive" value="Reset"/>
       </form>
     </ion-content>
   </ion-nav-view>

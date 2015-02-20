@@ -30,8 +30,8 @@
     "angular-ui-router": "./www/lib/ionic/js/angular-ui/angular-ui-router.js",
     "controllers": "./www/js/controllers/index.js",
     "svgTemplate": "./www/templates/svg.js",
-    "chartService": "./www/js/services/index.js",
-    "state": "./www/js/state/index.js",
+    "services": "./www/js/services/index.js",
+    "states": "./www/js/states/index.js",
     "utilities": "./www/js/utilities/index.js"
   },
   "browserify": {
